@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .log-entry {
+            font-family: 'Consolas', 'Monaco', monospace;
+            padding: 5px;
+            margin: 2px 0;
+            border-radius: 3px;
+        }
+        
+        .log-entry.info {
+            color: #89d1fe;
+        }
+        
+        .log-entry.error {
+            color: #f14c4c;
+            background-color: rgba(241, 76, 76, 0.1);
+        }
+        
+        .log-entry.warning {
+            color: #cca700;
+            background-color: rgba(204, 167, 0, 0.1);
+        }
+        
+        .screenshot-container {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #252525;
+            border-radius: 4px;
+        }
+        
+        .screenshot-container img {
+            max-width: 100%;
+            border: 1px solid #333;
+            border-radius: 2px;
+        }
+        
+        .timestamp {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        button {
+            background-color: #0e639c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1177bb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>AgentsDesk AI DevTools</h2>
+            <button id="clear">Clear</button>
+        </div>
+        <div class="content" id="log-container"></div>
+    </div>
+    <script src="panel.js"></script>
+</body>
+</html>
