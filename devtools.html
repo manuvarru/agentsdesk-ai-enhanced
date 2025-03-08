@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .tab {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 14px;
+        }
+        
+        .tab.active {
+            border-bottom: 2px solid #4CAF50;
+            color: #4CAF50;
+        }
+        
+        .content {
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .log-entry {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            font-family: monospace;
+        }
+        
+        .log-entry.error {
+            color: #dc3545;
+            background-color: #fff5f5;
+        }
+        
+        .log-entry.warning {
+            color: #ffc107;
+            background-color: #fff9e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="console">Console</button>
+            <button class="tab" data-tab="network">Network</button>
+            <button class="tab" data-tab="screenshots">Screenshots</button>
+        </div>
+        <div class="content">
+            <div id="console-logs"></div>
+            <div id="network-logs" style="display: none;"></div>
+            <div id="screenshots" style="display: none;"></div>
+        </div>
+    </div>
+    <script src="panel.js"></script>
+</body>
+</html>
