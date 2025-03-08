@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "AgentsDesk AI Enhanced",
+  "version": "1.0.0",
+  "description": "Versione migliorata di AgentsDesk AI con funzionalità di screenshot avanzate",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
